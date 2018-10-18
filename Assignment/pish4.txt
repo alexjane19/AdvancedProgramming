@@ -1,0 +1,56 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class myclass{
+	string name;
+	int phone;
+	int id;
+public:
+	//static const int color = 9;
+	myclass(){}
+	myclass(string n,int p,int i){
+		name=n;
+		p=phone;
+		id=i;
+	}
+
+	myclass input(){
+		myclass m;
+		cin>>m.name;
+		cin>>m.id;
+		cin>>m.phone;
+		return m;
+	}
+
+	myclass* search_name(myclass m[],int k,string name){
+		for(int i=0;i<k;i++)
+			if(m[i].name==name)
+				return &m[i];
+			else
+				return 0;
+	}
+
+	myclass* srot_phone(myclass m[],int l){
+		int min,temp;
+		for(int i=0;i<l;i++){
+			min=m[i].phone;
+			for(int j=i+1;j<l;j++)
+				if(m[j].phone<min)
+					min=m[j].phone;
+			if(min!=m[i].phone){
+				temp=m[i].phone;
+				m[i].phone=min;
+				min=temp;
+			}
+		}
+		return m;
+	}
+	void show(){
+		cout<<"name is "<<name<<" phone is "<<phone<<" id is "<<id<<endl;
+	}
+
+
+};
+int main(){
+	return 0;
+}

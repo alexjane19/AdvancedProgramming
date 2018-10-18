@@ -1,0 +1,58 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class student{
+	string fname;
+	string lname;
+	int cource[10];
+	int avrage;
+
+public:
+
+	void set_fname(string n){
+		fname=n;
+	}
+	void set_lname(string n){
+		lname=n;
+	}
+	void set_avrage(int a){
+		avrage=a;
+	}
+	void set_cource(int *c){
+		for(int i=0;i<10;i++)
+			cource[i]=c[i];
+	}
+
+	string get_fname(){
+		return fname;
+	}
+	string get_lname(){
+		return lname;
+	}
+	int get_avrage(){
+		return avrage;
+	}
+	int* get_cource(){
+		return cource;
+	}
+
+	int avr(){
+		int a=0;
+		for(int i=0;i<10;i++)
+			a=a+(int)cource[i];
+		return (a/10);
+	}
+
+	void show(){
+		cout<<"Name is = "<<fname<<" "<<lname<<endl;
+		cout<<"Avrage is = "<<avrage<<endl;
+	}	
+};
+
+int main(){
+
+	student st1;
+	st1.set_fname("reza");
+	st1.set_lname("abasi");
+	return 0;
+}

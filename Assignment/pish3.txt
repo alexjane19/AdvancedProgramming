@@ -1,0 +1,41 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class myclass{
+	int a;
+	double d;
+	float f;
+public:
+	myclass(){}
+
+	myclass(int b){
+		a=b;
+		d=0.0;
+		f=0;
+	}
+	
+	myclass input(){
+		myclass m;
+		cin>>m.a;
+		cin>>m.d;
+		cin>>m.f;
+		return m;
+	}
+
+	void output(myclass m){
+		cout<<"This class has "<<m.a<<" "<<m.d<<" "<<m.f<<endl;
+	}
+};
+
+int main(){
+	myclass ma,mb;
+
+	mb=ma.input();
+
+	mb.output(mb);
+
+	return 0;
+}
+
+
+
